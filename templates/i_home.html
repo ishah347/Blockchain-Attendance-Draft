@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Instructor Home
+{% endblock %}
+
+{% block main %}
+    <h1>Instructor Home</h1>
+    <form action="/i_home" method="post" autocomplete="off">
+        <h1>See Attendance</h1>
+        <table style = "width: 100%">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td>
+                        {% for class in classes %}
+                            <input type="submit" name="class" value={{class.class_name}} style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+                        {% endfor %}
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <h1>Generate your next hashes</h1>
+        <table style = "width: 100%">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td>
+                        {% for class in classes %}
+                            <input type="submit" name="generate" value={{class.class_name}} style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+                        {% endfor %}
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <input type="submit" name="check" value="Check integrity of attendance blockchain" style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+        <input type="submit" name="create" value="Create a new class" style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+    </form>
+{% endblock %}

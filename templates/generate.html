@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Daily Hashes
+{% endblock %}
+
+{% block main %}
+    <h1>Daily Hashes</h1>
+    <table style = "width: 100%">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>QR Code</th>
+            </tr>
+            <tr>
+                {% for student in form %}
+                    <td>
+                        <p>{{student}}</p>
+                    </td>
+                    <td>
+                        <img src="/static/{{student}}.jpg" style="width:200px;height:200px;"/></img>
+                    </td>
+                {% endfor %}
+            </tr>
+        </thead>
+    </table>
+{% endblock %}

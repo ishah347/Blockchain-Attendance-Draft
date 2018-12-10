@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Attendance Confirmation
+{% endblock %}
+
+{% block main %}
+    <h1>Attendance Confirmation</h1>
+    <h2>Please enter your daily hash</h2>
+    <form action="/attend_con" method="post" autocomplete="off">
+        <div class="form-group">
+            <input class="form-control" name="hash" placeholder="Hash" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="class" placeholder="Class" type="text" value={{c}} />
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit" style="cursor:pointer;">Submit</button>
+    </form>
+{% endblock %}

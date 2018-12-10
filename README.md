@@ -1,0 +1,2 @@
+To run, open up the terminal in the folder attendance. Run with "flask run". Best if run in the morning, as it seems occasionally
+unreliable in the PM times due to oddities that occur in the time-based functions.

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Drop Class
+{% endblock %}
+
+{% block main %}
+    <h1>Drop Class</h1>
+    <form action="/drop_class" method="post" autocomplete="off">
+        <div class="form-group">
+            <select class="form-control" name="class_name" placeholder="Class" type="text"/>
+                <option disabled selected value="">Type</option>
+                {% for class in classes %}
+                    <option value = {{class.class_name}}>{{class.class_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit" style="cursor:pointer;">Drop Class</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Class
+{% endblock %}
+
+{% block main %}
+    <h1>Create Class</h1>
+    <form action="/create_class" method="post" autocomplete="off">
+        <div class="form-group">
+            <input class="form-control" name="class_name" placeholder="Class" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="start_time" placeholder="Start Time" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="end_time" placeholder="End Time" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit" style="cursor:pointer;">Create Class</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h1>Log In</h1>
+    <form action="/login" method="post" autocomplete="off">
+        <div class="form-group">
+            <input autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <div class="form-group">
+            <select class="form-control" name="account_type" placeholder="Type" type="text"/>
+                <option disabled selected value="">Type</option>
+                <option value = "Instructor">Instructor</option>
+                <option value = "Student">Student</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit" style="cursor:pointer;">Log In</button>
+    </form>
+{% endblock %}

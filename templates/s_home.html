@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Student Home
+{% endblock %}
+
+{% block main %}
+    <h1>Student Home</h1>
+    <form action="/s_home" method="post" autocomplete="off">
+        <h2>Confirm Attendance</h2>
+        <table style = "width: 100%">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Instructor</th>
+                </tr>
+                <tr>
+                    <td>
+                        {% for class in classes %}
+                            <input type="submit" name="class" value={{class.class_name}} style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for class in classes %}
+                            <p>{{class.instructor_name}}</p>
+                        {% endfor %}
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <input type="submit" name="register" value="Register for a new class" style="background:none; border-width:0px; color:blue; text-decoration:underline; cursor:pointer;" />
+    </form>
+{% endblock %}
